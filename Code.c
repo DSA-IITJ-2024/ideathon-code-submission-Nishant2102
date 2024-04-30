@@ -563,27 +563,8 @@ void btree_delete_node(BNode* node, int key) {
             printf("Key %d not found\n", key);
             return;
         }
-        // Key not found in this node, recursively search in appropriate child
         int flag = (index == node->num_keys) ? 1 : 0;
-        if (node->children[index]->num_keys < MAX_KEYS / 2) {
-            // If the child doesn't have enough keys, adjust it
-            // (similar logic to insertion when splitting nodes)
-            if (index != 0 && node->children[index - 1]->num_keys >= MAX_KEYS / 2) {
-                // Borrow a key from the left sibling
-                // (similar logic to merging nodes when deleting)
-                // Implementation remains the same as insertion
-            } else if (index != node->num_keys && node->children[index + 1]->num_keys >= MAX_KEYS / 2) {
-                // Borrow a key from the right sibling
-                // (similar logic to merging nodes when deleting)
-                // Implementation remains the same as insertion
-            } else {
-                // Merge the child with its sibling
-                // (similar logic to merging nodes when deleting)
-                // Implementation remains the same as insertion
-            }
-        }
-        // Recursively delete the key from the appropriate child
-        // (after adjusting the child if necessary)
+     
         btree_delete_node(node->children[index], key);
     }
 }

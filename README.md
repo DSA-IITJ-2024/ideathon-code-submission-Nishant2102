@@ -99,3 +99,7 @@ code.
 This code demonstrates a solid understanding of tree data structures and their 
 implementation. With the suggested improvements, the code can become 
 more robust, maintainable, and user-friendly.
+
+HOW to implement:
+1. Copy and Paste on your code editor
+2. Utilise user interface on terminal
